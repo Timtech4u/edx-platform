@@ -1,5 +1,7 @@
-import sys
 import os
+import sys
+
+from pavelib import *
 
 # Ensure that we can import pavelib, and that our copy of pavelib
 # takes precedence over anything else installed in the virtualenv.
@@ -10,5 +12,3 @@ import os
 # Until we re-run pip install, the other copies of edx-platform could
 # take precedence, leading to some very strange results.
 sys.path.insert(0, os.path.dirname(__file__))
-
-from pavelib import *

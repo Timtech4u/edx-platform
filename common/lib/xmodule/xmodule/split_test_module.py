@@ -8,11 +8,12 @@ from operator import itemgetter
 from uuid import uuid4
 
 from lxml import etree
-from openedx.core.lib.xblock_fields.inherited_fields import UserPartitionList
 from webob import Response
 from xblock.core import XBlock
 from xblock.fields import Integer, ReferenceValueDict, Scope, String
 from xblock.fragment import Fragment
+
+from openedx.core.lib.xblock_fields.inherited_fields import UserPartitionList
 from xmodule.progress import Progress
 from xmodule.seq_module import SequenceDescriptor
 from xmodule.studio_editable import StudioEditableDescriptor, StudioEditableModule

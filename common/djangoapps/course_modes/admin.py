@@ -1,32 +1,19 @@
 """
 Django admin page for course modes
 """
-from django.conf import settings
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.conf import settings
 from django.contrib import admin
-
-from pytz import timezone, UTC
-
+from django.utils.translation import ugettext_lazy as _
+from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from opaque_keys.edx.locations import SlashSeparatedCourseKey
-from opaque_keys import InvalidKeyError
+from pytz import UTC, timezone
 
+from course_modes.models import CourseMode, CourseModeExpirationConfig
+from lms.djangoapps.verify_student import models as verification_models
 from util.date_utils import get_time_display
 from xmodule.modulestore.django import modulestore
-from course_modes.models import CourseMode, CourseModeExpirationConfig
-
-# Technically, we shouldn't be doing this, since verify_student is defined
-# in LMS, and course_modes is defined in common.
-#
-# Once we move the responsibility for administering course modes into
-# the Course Admin tool, we can remove this dependency and expose
-# verification deadlines as a separate Django model admin.
-#
-# The admin page will work in both LMS and Studio,
-# but the test suite for Studio will fail because
-# the verification deadline table won't exist.
-from lms.djangoapps.verify_student import models as verification_models
 
 COURSE_MODE_SLUG_CHOICES = [(mode_slug, mode_slug) for mode_slug in settings.COURSE_ENROLLMENT_MODES]
 

@@ -7,9 +7,9 @@ classes, which both need these type of functions.
 """
 from base64 import b32encode
 from datetime import datetime, timedelta
-import dateutil.parser
 from math import exp
 
+import dateutil.parser
 from pytz import utc
 
 from openedx.core.lib.xblock_fields.inherited_fields import DEFAULT_START_DATE

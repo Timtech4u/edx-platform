@@ -2,11 +2,12 @@
 
 from datetime import datetime
 
+from pytz import UTC
+
 from openedx.core.djangoapps.course_groups.models import CourseUserGroupPartitionGroup
 from openedx.core.djangoapps.course_groups.tests.helpers import CohortFactory
 from openedx.core.djangoapps.user_api.tests.factories import UserCourseTagFactory
 from openedx.core.lib.partitions.partitions import Group, UserPartition
-from pytz import UTC
 from student.tests.factories import CourseEnrollmentFactory, UserFactory
 from xmodule.modulestore.tests.django_utils import ModuleStoreTestCase
 from xmodule.modulestore.tests.factories import CourseFactory, ItemFactory

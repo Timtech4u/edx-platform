@@ -5,16 +5,13 @@ import time
 from collections import namedtuple
 from functools import partial
 
-from pkg_resources import resource_exists, resource_isdir, resource_listdir, resource_string
-
-import dogstats_wrapper as dog_stats_api
 import yaml
 from contracts import contract, new_contract
 from lazy import lazy
 from lxml import etree
 from opaque_keys.edx.asides import AsideDefinitionKeyV2, AsideUsageKeyV2
 from opaque_keys.edx.keys import UsageKey
-from openedx.core.lib.xblock_fields.fields import RelativeTime
+from pkg_resources import resource_exists, resource_isdir, resource_listdir, resource_string
 from webob import Response
 from webob.multidict import MultiDict
 from xblock.core import XBlock, XBlockAside
@@ -33,6 +30,9 @@ from xblock.fields import (
 )
 from xblock.fragment import Fragment
 from xblock.runtime import IdGenerator, IdReader, Runtime
+
+import dogstats_wrapper as dog_stats_api
+from openedx.core.lib.xblock_fields.fields import RelativeTime
 from xmodule import block_metadata_utils
 from xmodule.errortracker import exc_info_to_str
 from xmodule.exceptions import UndefinedContext

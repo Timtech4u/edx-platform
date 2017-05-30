@@ -11,15 +11,19 @@ by passing the --settings flag, you can specify what environment specific settin
 Any arguments not understood by this manage.py will be passed to django-admin.py
 """
 
-# Patch the xml libs before anything else.
-from safe_lxml import defuse_xml_libs
-defuse_xml_libs()
-
+import importlib
 import os
 import sys
-import importlib
 from argparse import ArgumentParser
+
 import contracts
+
+# Patch the xml libs before anything else.
+from safe_lxml import defuse_xml_libs
+
+
+defuse_xml_libs()
+
 
 
 def parse_args():

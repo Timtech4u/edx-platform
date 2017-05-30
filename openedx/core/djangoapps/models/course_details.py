@@ -5,6 +5,7 @@ import logging
 import re
 
 from django.conf import settings
+
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
 from openedx.core.lib.courses import course_image_url
 from openedx.core.lib.xblock_fields.fields import Date

@@ -8,14 +8,14 @@ import json
 import logging
 from datetime import datetime
 
-from pkg_resources import resource_string
-
 from django.utils.timezone import UTC
 from lxml import etree
-from openedx.core.lib.xblock_fields.fields import Date
+from pkg_resources import resource_string
 from xblock.core import XBlock
 from xblock.fields import Boolean, Integer, Scope, String
 from xblock.fragment import Fragment
+
+from openedx.core.lib.xblock_fields.fields import Date
 
 from .exceptions import NotFoundError
 from .mako_module import MakoModuleDescriptor

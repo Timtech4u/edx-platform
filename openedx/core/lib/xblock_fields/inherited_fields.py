@@ -6,9 +6,10 @@ from __future__ import absolute_import
 from datetime import datetime
 
 from django.conf import settings
-from openedx.core.lib.partitions.partitions import UserPartition
 from pytz import utc
 from xblock.fields import Boolean, Dict, Float, Integer, List, Scope, String, XBlockMixin
+
+from openedx.core.lib.partitions.partitions import UserPartition
 
 from .fields import Date, Timedelta
 
